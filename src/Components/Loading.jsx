@@ -1,6 +1,6 @@
 import "../assets/stylesheets/loader.scss"
 
-const Loader = () => {
+export default function Loading ()  {
   return (
     <div className="center">
       <div className="loadingspinner"></div>
@@ -8,4 +8,3 @@ const Loader = () => {
   );
 };
 
-export default Loader;

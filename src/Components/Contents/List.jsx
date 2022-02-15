@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-bootstrap";
 import Stars from "react-rating";
 
 
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { API_KEY, BASEURL } from "../../utils/app";
-import Loader from "../Loader";
+import { NavLink } from "react-router-dom";
+import Loading from "../Loading";
 
 export default function List() {
   const [movieList, setMovieList] = useState([]);
@@ -16,11 +16,12 @@ export default function List() {
       .then((res) => setMovieList(res.data?.results));
   }, []);
   return (
-    <div className="d-flex  movie-list-container container-xl">
+    <div >
     {movieList ? (
       movieList.map((movie, i) => {
         let { poster_path, title, vote_average, id } = movie;
         return (
+          <>
           <NavLink
             style={{ textDecoration: "none", color: "#000" }}
             to={`/movie/${id}`}
@@ -43,10 +44,12 @@ export default function List() {
               />
             </div>
           </NavLink>
+          
+        </>
         );
       })): (
 
-          <Loader />
+          <Loading />
       )
     }
     </div>

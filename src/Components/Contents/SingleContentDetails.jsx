@@ -2,15 +2,14 @@ import Axios from "axios";
 import  { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { API_KEY, BASEURL } from "../../utils/app";
+import Loading from "../Loading";
 
-import Loader from "../Loader";
 // import Rating from "../Rating";
 // import Trailer from "../trailar/Trailer";
 
 export default function SingleContentDetails({ movieDetail, credits }) {
   const [trailer, setTrailer] = useState("");
   const { id } = useParams();
-
   useEffect(() => {
     document.title = `Movie | ${movieDetail.title}`;
   });
@@ -78,7 +77,7 @@ export default function SingleContentDetails({ movieDetail, credits }) {
           </div>
         </div>
       ) : (
-        <Loader />
+        <Loading />
       )}
       <div className="d-flex pt-5">
         <div>

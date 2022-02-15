@@ -4,6 +4,8 @@ import './App.css';
 import ContentDetails from './Components/Contents/ContentDetails';
 import Header from './Components/Header';
 import HomePage from './Components/HomePage';
+import Cast from './Components/Cast';
+import PersonDetails from './Components/PersonDetails';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           
           <Route exact path='/popular' element={<HomePage/>} />
           <Route exact path='/movie/:id' element={<ContentDetails/>} />
+          <Route exact path='/movie/:id/cast' element={<Cast/>} />
+          <Route exact path='/person/:id' element={<PersonDetails/>} />
           <Route
             exact
             path="/"

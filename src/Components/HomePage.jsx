@@ -3,10 +3,9 @@ import List from "./Contents/List";
 
 export default function HomePage() {
  
-console.log("im there");
   return (
     <>
-      <div >
+      <div className="d-flex  movie-list-container container-xl">
        <List/>
    
       </div>

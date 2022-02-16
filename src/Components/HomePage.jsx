@@ -6,11 +6,15 @@ export default function HomePage() {
  
   return (
     <>
-      <div className="d-flex flex-wrap container-xl justify-content-between p-1">
-        <div className="w-30">
+      <div className="main-container">
+        <div className="sub-container-1">
+
         <GenreList/>
         </div>
+        <div className="sub-container-2">
+
        <List/>
+        </div>
    
       </div>
     </>

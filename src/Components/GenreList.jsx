@@ -17,46 +17,50 @@ export default function GenreList() {
     }
   }
   useEffect(() => {
-    
-      fetchData()
-  },[]);
-  return(
-      <>
-      <div>
-        {/* <nav>
+    fetchData();
+  }, []);
+  return (
+    <>
+      <div className="discover-list">
+        <h3>Discover</h3>
+        <p>
+          <NavLink style={{ textDecoration: "none" }} to="/popular">
+            Popular
+          </NavLink>
+        </p>
+        <p>
+          <NavLink style={{ textDecoration: "none" }} to="/nowplaying">
+            Now Playing
+          </NavLink>
+        </p>
+        <p>
+          <NavLink style={{ textDecoration: "none" }} to="/toprated">
+            Top Rated
+          </NavLink>
+        </p>
+        <p>
+          <NavLink style={{ textDecoration: "none" }} to="/upcoming">
+            Upcoming
+          </NavLink>
+        </p>
 
-                  <NavLink style={{ textDecoration: "none", color: "black" }} to="/popular">
-                      Popular
-                      </NavLink>
-                      
-              <NavLink style={{ textDecoration: "none", color: "black" }} to="/discover">
-                  Discover
-                  </NavLink>
-              <NavLink style={{ textDecoration: "none", color: "black" }} to="/toprated">
-                  Top Rated
-                  </NavLink>
-              <NavLink style={{ textDecoration: "none", color: "black" }} to="/upcomin">
-                  Upcoming
-                  </NavLink>
-        </nav> */}
-         
-          <h2>Genre</h2>
-          {genreList.map((genre, i) => {
-            return (
-                <>
+        <h2>Genre</h2>
+        {genreList.map((genre, i) => {
+          return (
+            <p>
               <NavLink
                 key={i}
                 activeClassName="active"
                 style={{ textDecoration: "none" }}
                 to={`/genre/${genre.name}`}
                 // onClick={() => handleClick(genre.id)}
-                >
+              >
                 {genre.name}
               </NavLink>
-                  </>
-            );
-          })}
+            </p>
+          );
+        })}
       </div>
-      </>
-  )
+    </>
+  );
 }

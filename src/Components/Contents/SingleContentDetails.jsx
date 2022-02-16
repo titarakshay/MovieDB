@@ -11,7 +11,7 @@ export default function SingleContentDetails({ movieDetail, credits }) {
   const [trailer, setTrailer] = useState("");
   const { id } = useParams();
   useEffect(() => {
-    document.title = `Movie | ${movieDetail.title}`;
+    document.title = `Movie | ${movieDetail?.title}`;
   });
 
   useEffect(() => {
@@ -113,7 +113,7 @@ export default function SingleContentDetails({ movieDetail, credits }) {
           </div>
           <div className="mt-4 ml-2 ">
             <NavLink
-              to={`/movie/${movieDetail.id}/cast`}
+              to={`/movie/${movieDetail?.id}/cast`}
               style={{
                 textDecoration: "none",
                 color: "#100",
@@ -127,27 +127,27 @@ export default function SingleContentDetails({ movieDetail, credits }) {
         <div className="pl-5 pt-3">
           <div className="pb-3">
             <h3 className="cast-name">Status</h3>
-            <p className="text-secondary">{movieDetail.status}</p>
+            <p className="text-secondary">{movieDetail?.status}</p>
           </div>
           <div className="pb-3">
             <h3 className="cast-name">Original Language</h3>
-            <p className="text-secondary">{movieDetail.original_language}</p>
+            <p className="text-secondary">{movieDetail?.original_language}</p>
           </div>
           <div className="pb-3">
             <h3 className="cast-name">Budget</h3>
             <p className="text-secondary">
-              {movieDetail.budget > 0 ? movieDetail.budget : "-"}
+              {movieDetail?.budget > 0 ? movieDetail?.budget : "-"}
             </p>
           </div>
           <div className="pb-3">
             <h3 className="cast-name">Revenue </h3>
             <p className="text-secondary">
-              {movieDetail.revenue > 0 ? movieDetail.revenue : "-"}
+              {movieDetail?.revenue > 0 ? movieDetail?.revenue : "-"}
             </p>
           </div>
           <div className="pb-3">
             <h3 className="cast-name"> Keywords</h3>
-            <p className="text-secondary">{movieDetail.status}</p>
+            <p className="text-secondary">{movieDetail?.status}</p>
           </div>
         </div>
       </div>

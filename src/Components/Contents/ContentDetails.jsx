@@ -1,5 +1,5 @@
 import Axios from "axios";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { API_KEY, BASEURL } from "../../utils/app";
 import List from "./List";
@@ -11,7 +11,7 @@ export default function ContentDetails() {
   const [contentList, setContentList] = useState([]);
   const [credits, setCredits] = useState("");
   const { id } = useParams();
-    
+
   useEffect(() => {
     const fetchContentData = async () => {
       try {
@@ -22,8 +22,8 @@ export default function ContentDetails() {
         setCredits(credit);
 
         const contentList = await Axios.get(
-            `${BASEURL}/movie/${id}/recommendations?api_key=${API_KEY}&page=${1}`
-          );
+          `${BASEURL}/movie/${id}/recommendations?api_key=${API_KEY}&page=${1}`
+        );
         const movie = contentList.data;
         setContentList(movie);
 
@@ -41,12 +41,18 @@ export default function ContentDetails() {
 
   return (
     <div className="container-xl p-top-7">
-      <SingleContentDetails contentDetail={contentDetail} credits={credits} />
-      <div>
-        <h3 className="title-lg pt-5">Recommendations</h3>
-        <List contentList={contentList.results} />
-       
-      </div>
+      {contentDetail && (
+        <>
+          <SingleContentDetails
+            contentDetail={contentDetail}
+            credits={credits}
+          />
+          <div>
+            <h3 className="title-lg pt-5">Recommendations</h3>
+            <List contentList={contentList.results} />
+          </div>
+        </>
+      )}
     </div>
   );
 }

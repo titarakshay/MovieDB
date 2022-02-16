@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Stars from "react-rating";
 
-
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { API_KEY, BASEURL } from "../../utils/app";
 import { NavLink } from "react-router-dom";
@@ -16,42 +15,40 @@ export default function List() {
       .then((res) => setMovieList(res.data?.results));
   }, []);
   return (
-    <div >
-    {movieList ? (
-      movieList.map((movie, i) => {
-        let { poster_path, title, vote_average, id } = movie;
-        return (
-          <>
-          <NavLink
-            style={{ textDecoration: "none", color: "#000" }}
-            to={`/movie/${id}`}
-            key={i}
-            className="m-4 single-movie text-center shadow"
-          >
-            <img
-              className="movie-poser"
-              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-              alt=""
-            />
+    <div className="d-flex flex-wrap" >
+      {movieList ? (
+        movieList.map((movie, i) => {
+          let { poster_path, title, vote_average, id } = movie;
+          return (
+            <div className="align-content-start ">
+              <NavLink
+                style={{ textDecoration: "none", color: "#000" }}
+                to={`/movie/${id}`}
+                key={id}
+                className="m-4 single-movie text-center shadow"
+              >
+                <img
+                  className="movie-poser"
+                  src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                  alt=""
+                />
 
-            <p className="py-2 font-sm">{title}</p>
-            <div className="pb-2">
-              <Stars
-                emptySymbol={<FaRegStar />}
-                fullSymbol={<FaStar />}
-                initialRating={vote_average / 2}
-                readonly
-              />
+                <p className="py-2 font-sm">{title}</p>
+                <div className="pb-2">
+                  <Stars
+                    emptySymbol={<FaRegStar />}
+                    fullSymbol={<FaStar />}
+                    initialRating={vote_average / 2}
+                    readonly
+                  />
+                </div>
+              </NavLink>
             </div>
-          </NavLink>
-          
-        </>
-        );
-      })): (
-
-          <Loading />
-      )
-    }
+          );
+        })
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

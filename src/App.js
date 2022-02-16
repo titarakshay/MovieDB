@@ -1,11 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Navigate, Route, Routes } from "react-router"
-import './App.css';
-import ContentDetails from './Components/Contents/ContentDetails';
-import Header from './Components/Header';
+
+
 import HomePage from './Components/HomePage';
-import Cast from './Components/Cast';
-import PersonDetails from './Components/PersonDetails';
+import Header from './Components/Header';
+
 
 function App() {
   return (
@@ -13,16 +12,12 @@ function App() {
       <Header />
       <div className='d-flex media-d-b'>
         < Routes>
-          
-          <Route exact path='/popular' element={<HomePage/>} />
-          <Route exact path='/movie/:id' element={<ContentDetails/>} />
-          <Route exact path='/movie/:id/cast' element={<Cast/>} />
-          <Route exact path='/person/:id' element={<PersonDetails/>} />
           <Route
             exact
             path="/"
             element={<Navigate to="/popular" />}
           />
+          <Route exact path='/popular' element={<HomePage/>}/>
         </ Routes>
       </div>
     </BrowserRouter>

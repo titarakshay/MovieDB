@@ -6,7 +6,7 @@ export default function Header() {
     <header className=" header  text-white p-1">
       <div>
         <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-          <h2>ATMDB</h2>
+          <h2>AMDB</h2>
         </NavLink>
         <h3>
           <FaSearch />

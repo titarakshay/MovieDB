@@ -1,26 +1,18 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import Stars from "react-rating";
 
 import { FaRegStar, FaStar } from "react-icons/fa";
-import { API_KEY, BASEURL } from "../../utils/app";
 import { NavLink } from "react-router-dom";
 import Loading from "../Loading";
 
-export default function List() {
-  const [movieList, setMovieList] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${BASEURL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
-      .then((res) => setMovieList(res.data?.results));
-  }, []);
+export default function List({movieList=[]}) {
+  console.log(movieList,"movies");
   return (
-    <div className="d-flex flex-wrap" >
+    <>
       {movieList ? (
         movieList.map((movie, i) => {
           let { poster_path, title, vote_average, id } = movie;
           return (
-            <div className="align-content-start ">
+            <div className="">
               <NavLink
                 style={{ textDecoration: "none", color: "#000" }}
                 to={`/movie/${id}`}
@@ -49,6 +41,6 @@ export default function List() {
       ) : (
         <Loading />
       )}
-    </div>
+    </>
   );
 }

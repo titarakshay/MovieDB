@@ -18,6 +18,8 @@ function App() {
             element={<Navigate to="/popular" />}
           />
           <Route exact path='/popular' element={<HomePage/>}/>
+          <Route exact path='/:discover' element={<HomePage/>}/>
+
         </ Routes>
       </div>
     </BrowserRouter>

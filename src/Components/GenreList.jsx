@@ -29,12 +29,12 @@ export default function GenreList() {
           </NavLink>
         </p>
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/nowplaying">
+          <NavLink style={{ textDecoration: "none" }} to="/now_playing">
             Now Playing
           </NavLink>
         </p>
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/toprated">
+          <NavLink style={{ textDecoration: "none" }} to="/top_rated">
             Top Rated
           </NavLink>
         </p>

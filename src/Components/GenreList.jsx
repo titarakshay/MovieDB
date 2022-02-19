@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { API_KEY, BASEURL } from "../utils/app";
 
-export default function GenreList(handleClick) {
+export default function GenreList() {
   const [genreList, setGenreList] = useState([]);
   async function fetchData() {
     try {
@@ -28,13 +28,14 @@ export default function GenreList(handleClick) {
             Popular
           </NavLink>
         </p>
-        <p>
+        {/* <p>
           <NavLink style={{ textDecoration: "none" }} to="/now_playing">
             Now Playing
           </NavLink>
-        </p>
+        </p> */}
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/top_rated">
+          <NavLink style={{ textDecoration: "none" }} to="/top_rated"
+          >
             Top Rated
           </NavLink>
         </p>
@@ -46,17 +47,21 @@ export default function GenreList(handleClick) {
 
         <h2>Genre</h2>
         {genreList.map((genre, i) => {
+            const {id}=genre
           return (
             <p>
-              <NavLink
+              <Link
                 key={i}
                 activeClassName="active"
-                to={`/movie/${genre.name}`}
+                to={{
+                    pathname:`/${id}`,
+                    state:{note:"true"}
+                  }}
                 style={{ textDecoration: "none" }}
-                onClick={() => handleClick(genre.id)}
+                // onClick={(e) => handleClick(genre.id,"genre")}
               >
                 {genre.name}
-              </NavLink>
+              </Link>
             </p>
           );
         })}

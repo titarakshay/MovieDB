@@ -10,25 +10,25 @@ export default function ContentDetails() {
   const [contentDetail, setContentDetail] = useState("");
   const [contentList, setContentList] = useState([]);
   const [credits, setCredits] = useState("");
-  const { id } = useParams();
-
+  const  {name } = useParams();
+  console.log(name,"ids");
   useEffect(() => {
     const fetchContentData = async () => {
       try {
         const credits = await Axios.get(
-          `${BASEURL}/movie/${id}/credits?api_key=${API_KEY}`
+          `${BASEURL}/movie/${name}/credits?api_key=${API_KEY}`
         );
         const credit = credits.data;
         setCredits(credit);
 
         const contentList = await Axios.get(
-          `${BASEURL}/movie/${id}/recommendations?api_key=${API_KEY}&page=${1}`
+          `${BASEURL}/movie/${name}/recommendations?api_key=${API_KEY}&page=${1}`
         );
         const movie = contentList.data;
         setContentList(movie);
 
         const contentDetail = await Axios.get(
-          `${BASEURL}/movie/${id}?api_key=${API_KEY}`
+          `${BASEURL}/movie/${name}?api_key=${API_KEY}`
         );
         const detail = contentDetail.data;
         setContentDetail(detail);
@@ -37,7 +37,7 @@ export default function ContentDetails() {
       }
     };
     fetchContentData();
-  }, [id]);
+  }, [name]);
 
   return (
     <div className="container-xl p-top-7">

@@ -4,15 +4,14 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Loading from "../Loading";
 
-export default function List({movieList=[]}) {
-  // console.log(movieList,"list");
+export default function List({movieList=[]},handleClick) {
   return (
     <>
       {movieList ? (
         movieList?.map((movie, i) => {
           let { poster_path, title, vote_average, id } = movie;
           return (
-            <div className="">
+           
               <NavLink
                 style={{ textDecoration: "none", color: "#000" }}
                 to={`/movie/${id}`}
@@ -35,7 +34,6 @@ export default function List({movieList=[]}) {
                   />
                 </div>
               </NavLink>
-            </div>
           );
         })
       ) : (

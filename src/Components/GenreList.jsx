@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { API_KEY, BASEURL } from "../utils/app";
 
-export default function GenreList() {
+export default function GenreList(handleClick) {
   const [genreList, setGenreList] = useState([]);
   async function fetchData() {
     try {
@@ -51,9 +51,9 @@ export default function GenreList() {
               <NavLink
                 key={i}
                 activeClassName="active"
+                to={`/movie/${genre.name}`}
                 style={{ textDecoration: "none" }}
-                to={`/genre/${genre.name}`}
-                // onClick={() => handleClick(genre.id)}
+                onClick={() => handleClick(genre.id)}
               >
                 {genre.name}
               </NavLink>

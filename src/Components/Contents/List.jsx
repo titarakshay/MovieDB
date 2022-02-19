@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 import Loading from "../Loading";
 
 export default function List({movieList=[]}) {
-  console.log(movieList,"movies");
+  // console.log(movieList,"list");
   return (
     <>
       {movieList ? (
-        movieList.map((movie, i) => {
+        movieList?.map((movie, i) => {
           let { poster_path, title, vote_average, id } = movie;
           return (
             <div className="">

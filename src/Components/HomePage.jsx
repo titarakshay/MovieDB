@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
 import { API_KEY, BASEURL } from "../utils/app";
 import List from "./Contents/List";
-import GenreList from "./GenreList";
+// import GenreList from "./GenreList";
 
 export default function HomePage() {
   let location = useLocation();
@@ -26,17 +26,18 @@ export default function HomePage() {
   }, [discover]);
   return (
     <>
-      <div className="main-container">
+        <List movieList={movieList}/>
+      {/* <div className="main-container">
         <div className="sub-container-1">
 
         <GenreList />
         </div>
         <div className="sub-container-2">
+        <List movieList={movieList}/>
 
-       <List movieList={movieList}/>
         </div>
    
-      </div>
+      </div> */}
     </>
   );
 }

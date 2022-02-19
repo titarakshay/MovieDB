@@ -25,7 +25,7 @@ export default function ContentDetails() {
           `${BASEURL}/movie/${name}/recommendations?api_key=${API_KEY}&page=${1}`
         );
         const movie = contentList.data;
-        setContentList(movie);
+        setContentList(movie?.results);
 
         const contentDetail = await Axios.get(
           `${BASEURL}/movie/${name}?api_key=${API_KEY}`
@@ -38,7 +38,7 @@ export default function ContentDetails() {
     };
     fetchContentData();
   }, [name]);
-
+  console.log(contentList,"recommend");
   return (
     <div className="container-xl p-top-7">
       {contentDetail && (
@@ -49,7 +49,7 @@ export default function ContentDetails() {
           />
           <div>
             <h3 className="title-lg pt-5">Recommendations</h3>
-            <List contentList={contentList.results} />
+            <List movieList={contentList} />
           </div>
         </>
       )}

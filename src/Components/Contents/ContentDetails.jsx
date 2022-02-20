@@ -38,7 +38,6 @@ export default function ContentDetails() {
     };
     fetchContentData();
   }, [name]);
-  console.log(contentList,"recommend");
   return (
     <div className="container-xl p-top-7">
       {contentDetail && (

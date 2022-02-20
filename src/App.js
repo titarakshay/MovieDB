@@ -1,15 +1,21 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Navigate, Route, Routes, useLocation, useParams } from "react-router"
+import { Navigate, Route, Routes, useLocation } from "react-router"
 
 
 import HomePage from './Components/HomePage';
 import Header from './Components/Header';
 import ContentDetails from './Components/Contents/ContentDetails';
 import GenreList from './Components/GenreList';
+import { useState } from 'react';
 
 
 function App() {
-  
+  const [genresId, setGenresId] = useState(0);
+  const handleClick = (id,e) => {
+    e.preventDefault()
+    setGenresId(id);
+  };
+console.log(genresId,"id ");
 
   return (
     < BrowserRouter >
@@ -17,7 +23,7 @@ function App() {
       <div className="main-container">
         <div className="sub-container-1">
 
-        <GenreList />
+        <GenreList  handleClick={handleClick}/>
         </div>
       <div className='sub-container-2'>
         < Routes>
@@ -27,7 +33,7 @@ function App() {
             element={<Navigate to="/popular" />}
           />
            <Route exact path='/:discover' element={<HomePage />}/>
-           {/* <Route exact path='/:genre/:name' element={<HomePage />}/> */}
+           {/* <Route exact path='/genre/:name' element={<HomePage   />}/> */}
            <Route exact path='/movie/:name' element={<ContentDetails />}/>
 
         </ Routes>

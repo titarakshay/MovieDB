@@ -10,6 +10,7 @@ import Loading from "../Loading";
 export default function SingleContentDetails({ contentDetail, credits }) {
   const [trailer, setTrailer] = useState("");
   const  {name}  = useParams();
+  console.log(credits,"recommend");
 
   useEffect(() => {
     document.title = `Movie | ${contentDetail?.title}`;

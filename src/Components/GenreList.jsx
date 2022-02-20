@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { API_KEY, BASEURL } from "../utils/app";
 
-export default function GenreList() {
+export default function GenreList(handleClick) {
   const [genreList, setGenreList] = useState([]);
   async function fetchData() {
     try {
@@ -50,7 +50,7 @@ export default function GenreList() {
             const {id}=genre
           return (
             <p>
-              <Link
+              <NavLink
                 key={i}
                 activeClassName="active"
                 to={{
@@ -59,9 +59,10 @@ export default function GenreList() {
                   }}
                 style={{ textDecoration: "none" }}
                 // onClick={(e) => handleClick(genre.id,"genre")}
+                // onClick={(e) => this.handleClick(genre.id,e)}
               >
                 {genre.name}
-              </Link>
+              </NavLink>
             </p>
           );
         })}

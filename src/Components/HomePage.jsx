@@ -1,15 +1,16 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router";
+import {  useLocation, useParams } from "react-router";
 import { API_KEY, BASEURL } from "../utils/app";
 import List from "./Contents/List";
 // import GenreList from "./GenreList";
 
 export default function HomePage() {
-  let location = useLocation();
   const [movieList, setMovieList] = useState([]);
   const {discover}  = useParams();
+  let location = useLocation();
+
   useEffect(() => {
    async function fetching (){
      try {
@@ -22,7 +23,7 @@ export default function HomePage() {
       }
     }
    fetching()
-    
+   console.log(location,"gere");
   }, [discover]);
   return (
     <>

@@ -6,7 +6,7 @@ import Loading from "../Loading";
 
 export default function List({movieList=[]},handleClick) {
   return (
-    <>
+    <div className="movie-list">
       {movieList ? (
         movieList?.map((movie, i) => {
           let { poster_path, title, vote_average, id } = movie;
@@ -16,7 +16,7 @@ export default function List({movieList=[]},handleClick) {
                 style={{ textDecoration: "none", color: "#000" }}
                 to={`/movie/${id}`}
                 key={id}
-                className="m-4 single-movie text-center shadow"
+                className="single-movie text-center shadow"
               >
                 <img
                   className="movie-poser"
@@ -24,7 +24,7 @@ export default function List({movieList=[]},handleClick) {
                   alt=""
                 />
 
-                <p className="py-2 font-sm">{title}</p>
+                <p className="font-sm">{title}</p>
                 <div className="pb-2">
                   <Stars
                     emptySymbol={<FaRegStar />}
@@ -39,6 +39,6 @@ export default function List({movieList=[]},handleClick) {
       ) : (
         <Loading />
       )}
-    </>
+    </div>
   );
 }

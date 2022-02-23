@@ -7,6 +7,8 @@ import Header from './Components/Header';
 import ContentDetails from './Components/Contents/ContentDetails';
 import GenreList from './Components/GenreList';
 import { useState } from 'react';
+import Cast from './Components/Cast';
+import PersonDetails from './Components/PersonDetails';
 
 
 function App() {
@@ -35,6 +37,9 @@ console.log(genresId,"id ");
            <Route exact path='/:discover' element={<HomePage />}/>
            {/* <Route exact path='/genre/:name' element={<HomePage   />}/> */}
            <Route exact path='/movie/:name' element={<ContentDetails />}/>
+           <Route exact path='/movie/:id/cast' element={<Cast />}/>
+           <Route exact path='/person/:id' element={<PersonDetails />}/>
+
 
         </ Routes>
       </div>

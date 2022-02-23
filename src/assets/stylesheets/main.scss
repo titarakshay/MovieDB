@@ -51,7 +51,7 @@ body {
     }
   }
   .sub-container-2{
-    width: 100%;
+    width: 1080px;
     padding: 0.6rem;    
   }
 }
@@ -111,7 +111,8 @@ body {
 }
 
 // cast
-.cast-container {
+.cast-container-list {
+  display: flex;
   width: 700px;
   overflow-x: scroll;
   .profile-img {
@@ -121,6 +122,10 @@ body {
   img {
     width: 100%;
   }
+}
+//full cast list
+.cast-crew-container{
+  max-width: 1080px;
 }
 .cast-name {
   font-size: 1.1rem;

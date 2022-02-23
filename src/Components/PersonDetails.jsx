@@ -100,7 +100,7 @@ export default function PersonDetails() {
       <div className="container-xl pt-5">
         <h3 className="title-lg">Known For</h3>
       </div>
-      {/* <List movieList={personMovies.results} /> */}
+      <List movieList={personMovies.results} />
       {/* <Pagination
         setPage={setPage}
         page={page}

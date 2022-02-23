@@ -81,10 +81,10 @@ export default function SingleContentDetails({ contentDetail, credits }) {
       ) : (
         <Loading />
       )}
-      <div className="d-flex pt-5">
+      <div className="pt-5">
         <div>
           <h3 className="title-lg">Top Billed Cast</h3>
-          <div className="d-flex cast-container">
+          <div className="cast-container-list">
             {credits
               ? credits.cast.map((cast, i) => {
                   return (

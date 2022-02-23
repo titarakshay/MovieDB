@@ -3,6 +3,7 @@ import  { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { API_KEY, BASEURL } from "../../utils/app";
 import Loading from "../Loading";
+import Trailer from "../Trailers/Trailer";
 
 // import Rating from "../Rating";
 // import Trailer from "../trailar/Trailer";
@@ -34,7 +35,7 @@ export default function SingleContentDetails({ contentDetail, credits }) {
   return (
     <>
       {contentDetail ? (
-        <div className="d-flex align-items-center media-d-b">
+        <div className="content-block">
           <div className="single-movie-poster">
             <img
               className="movie-poser"
@@ -43,7 +44,7 @@ export default function SingleContentDetails({ contentDetail, credits }) {
             />
           </div>
 
-          <div className="pl-5 media-p-1">
+          <div className="content-details">
             <p className="title-lg">{contentDetail.title}</p>
             <div className="text-secondary">
               <small className="pr-1">{contentDetail.release_date}</small>
@@ -74,8 +75,10 @@ export default function SingleContentDetails({ contentDetail, credits }) {
               {contentDetail.tagline}
             </h3>
             {/* <Trailer trailers={trailer.results.slice(0, 1)} /> */}
+            {/* <Trailer/> */}
+
             <h2 style={{ fontSize: "1.5rem" }}>overview</h2>
-            <p>{contentDetail.overview}</p>
+            <p className="content-overview">{contentDetail.overview}</p>
           </div>
         </div>
       ) : (
@@ -90,7 +93,7 @@ export default function SingleContentDetails({ contentDetail, credits }) {
                   return (
                     <div
                       key={i}
-                      className="profile-card shadow-sm mx-2 my-1 border rounded"
+                      className=" shadow-sm mx-2 my-1 border rounded"
                     >
                       <NavLink
                         to={`/person/${cast.id}`}

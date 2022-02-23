@@ -58,7 +58,7 @@ export default function GenreList(handleClick) {
                     state:{note:"true"}
                   }}
                 style={{ textDecoration: "none" }}
-                // onClick={(e) => handleClick(genre.id,"genre")}
+                onClick={(e) => handleClick(genre.id,"genre")}
                 // onClick={(e) => this.handleClick(genre.id,e)}
               >
                 {genre.name}

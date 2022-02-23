@@ -39,7 +39,7 @@ export default function ContentDetails() {
     fetchContentData();
   }, [name]);
   return (
-    <div className="container-xl p-top-7">
+   <>
       {contentDetail && (
         <>
           <SingleContentDetails
@@ -52,6 +52,7 @@ export default function ContentDetails() {
           </div>
         </>
       )}
-    </div>
+   </>
+
   );
 }

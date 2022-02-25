@@ -13,9 +13,9 @@ import PersonDetails from './Components/PersonDetails';
 
 function App() {
   const [genresId, setGenresId] = useState(0);
-  const handleClick = (id,e) => {
-    e.preventDefault()
-    setGenresId(id);
+  const handleClick = (id) => {
+    console.log(id,"iddd");
+   
   };
 console.log(genresId,"id ");
 

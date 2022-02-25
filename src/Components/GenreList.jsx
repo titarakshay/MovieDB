@@ -19,6 +19,7 @@ export default function GenreList(handleClick) {
   useEffect(() => {
     fetchData();
   }, []);
+ 
   return (
     <>
       <div className="discover-list">
@@ -55,11 +56,11 @@ export default function GenreList(handleClick) {
                 activeClassName="active"
                 to={{
                     pathname:`/${id}`,
-                    state:{note:"true"}
+                    state:[id]
                   }}
                 style={{ textDecoration: "none" }}
-                onClick={(e) => handleClick(genre.id,"genre")}
-                // onClick={(e) => this.handleClick(genre.id,e)}
+                // onClick={(e) => handleClick(genre.id,"genre")}
+               
               >
                 {genre.name}
               </NavLink>

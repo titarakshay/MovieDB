@@ -11,7 +11,7 @@ const Pagination = ({ nextPreviousPage, setPage, page }) => {
     setPage(previousPageCount);
   };
   return (
-    <div className=" p-4">
+    <div className="d-flex p-4">
       {page === 1 ? (
         ""
       ) : (

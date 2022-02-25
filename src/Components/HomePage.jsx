@@ -4,30 +4,37 @@ import { useEffect, useState } from "react";
 import {  useLocation, useParams } from "react-router";
 import { API_KEY, BASEURL } from "../utils/app";
 import List from "./Contents/List";
+import Pagination from "./Pagination";
 // import GenreList from "./GenreList";
 
 export default function HomePage() {
   const [movieList, setMovieList] = useState([]);
   const {discover}  = useParams();
+  const [page, setPage] = useState(1);
   let location = useLocation();
 
   useEffect(() => {
    async function fetching (){
      try {
        const fetch=await  axios
-       .get(`${BASEURL}/movie/${discover?discover:"popular"}?api_key=${API_KEY}&language=en-US&page=1`)
+       .get(`${BASEURL}/movie/${discover?discover:"popular"}?api_key=${API_KEY}&language=en-US&page=${page}`)
        const fetchData=fetch.data
-       setMovieList(fetchData?.results)
+       setMovieList(fetchData)
       } catch (error) {
         console.log(error);
       }
     }
    fetching()
    console.log(location,"gere");
-  }, [discover]);
+  }, [discover,page]);
   return (
     <>
-        <List movieList={movieList}/>
+        <List movieList={movieList.results}/>
+        <Pagination
+        nextPreviousPage={movieList}
+        setPage={setPage}
+        page={page}
+      />
       {/* <div className="main-container">
         <div className="sub-container-1">
 

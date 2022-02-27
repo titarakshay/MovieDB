@@ -1,209 +1,217 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 }
-
-
 
 // header
 .header {
-  background: #032541;
-  div {
-    margin: 0 auto;
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    align-items: center;
-  }
+	background: #032541;
+	div {
+		margin: 0 auto;
+		display: flex;
+		width: 90%;
+		padding: 0.6rem 0;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.2rem;
+		letter-spacing: 00.05rem;
+	}
 }
-.main-container{
-  width: 96%;
-  display: flex;
-  margin: 1.5rem auto;
-  
-  .sub-container-1{
-    width: 20%;
-    padding: 1rem 0.6rem ;
-    border-right: 1px solid grey;
-    .discover-list {
-      p {
-        margin: 0.6rem 0;
-        a {
-          color: #000000;
-          font-size: 0.8rem;
-          border-radius: 1rem;
-          padding: 0.2rem 0.6rem;
-          margin-bottom: 0.5rem;
-          &:hover {
-            border: 1px solid #9e9e9e;
-          }
-        }
-        
-      }
-    }
-  }
-  .sub-container-2{
-    font-size: x-small;
-    width: 80%;
-    color: #3b3b3b;
-    padding: 0.8rem;    
-  }
+.main-container {
+	width: 96%;
+	display: flex;
+	margin: 2.5rem auto;
+	padding: 1rem 0.6rem;
+
+	.sub-container-1 {
+		width: 16%;
+		border-right: 1px solid rgba(195, 195, 195, 0.719);
+		.discover-list {
+			font-size: 1.2rem;
+			letter-spacing: 0.5px;
+			line-height: 2rem;
+			text-transform: uppercase;
+			color: #4e4e4e;
+			p {
+				margin: 1.2rem 0 0.7rem 0;
+				a {
+					color: inherit;
+					font-size: 1rem;
+					border-radius: 1.2rem;
+					padding: 0.5rem 1rem;
+					margin-bottom: 0.5rem;
+					border: 1px solid transparent;
+					&:hover {
+						border: 1px solid #b1b1b1;
+					}
+				}
+			}
+		}
+	}
+	.sub-container-2 {
+		font-size: x-small;
+		width: 84%;
+		color: #3b3b3b;
+		padding: 0 1rem;
+	}
 }
 
 //dashboard
 .movie-list-container {
-  padding-top: 4rem;
-  
+	padding-top: 4rem;
 
-  .movie-poser {
-    border-radius: 0.25rem;
-  }
-  .single-movie:hover {
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    background: #546e7a;
-    color: #ffffff !important;
-  }
+	.movie-poser {
+		border-radius: 0.25rem;
+	}
+	.single-movie:hover {
+		border: 1px solid #ccc;
+		border-radius: 0.25rem;
+		background: #546e7a;
+		color: #ffffff !important;
+	}
 }
 // movie-list
-.movie-list{
-  // padding: 1rem ;
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: space-around;
-  .single-movie {
-    .movie-poser {
-      border-radius: 0.25rem;
-    }
-    .single-movie:hover {
-      border: 1px solid #ccc;
-      border-radius: 0.25rem;
-      background: #546e7a;
-      color: #ffffff !important;
-    }
-    width: 20%;
-    margin: 1rem 0.6rem;
-    // margin: 0 auto;
-    // background: #f1f1f1;
-    img {
-      width: 100%;
-      // height: 150px;
-    }
-    
-  }
+.movie-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	.single-movie {
+		border-bottom-left-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+		margin-bottom: 1.8rem !important;
+		.single-movie:hover {
+			border: 1px solid #ccc;
+			border-radius: 0.4rem;
+			background: #546e7a;
+			color: #ffffff !important;
+		}
+		width: 20%;
+		margin: 1rem 0.6rem;
+		font-size: 1rem;
+		color: #3b3b3b;
+		// margin: 0 auto;
+		// background: #f1f1f1;
+		img {
+			width: 100%;
+			// height: 150px;
+		}
+		p {
+			padding: 0.5rem 0;
+		}
+	}
 }
 // single content block
-.content-block{
-  display: flex;
-  width: 100%;
-  .content-details{
-    border: 1px solid black;
-    padding: 0 0.8rem;
-    .content-overview{
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
+.content-block {
+	display: flex;
+	width: 100%;
+	.content-details {
+		border: 1px solid black;
+		padding: 0 0.8rem;
+		.content-overview {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
 }
 // single-movie-poster
 .single-movie-poster {
-  max-width: 250px;
-  height: 300px;
+	max-width: 250px;
+	height: 300px;
 }
 .single-movie-poster img {
-  height: 100%;
-  border-radius: 0.5rem;
+	height: 100%;
+	border-radius: 0.5rem;
 }
 
 .title-lg {
-  font-size: 1.8rem;
-  font-weight: 300;
+	font-size: 1.8rem;
+	font-weight: 300;
 }
 .movie-tagline {
-  font-size: 1.2rem;
-  font-weight: 300;
+	font-size: 1.2rem;
+	font-weight: 300;
 }
 
 // cast
 .cast-container-list {
-  display: flex;
-  overflow-x: scroll;
-  .profile-img {
-    width: 80px;
-    height: 120px;
-  }
-  img {
-    width: 100%;
-  }
+	display: flex;
+	overflow-x: scroll;
+	.profile-img {
+		width: 80px;
+		height: 120px;
+	}
+	img {
+		width: 100%;
+	}
 }
 //full cast list
 // .cast-crew-container{
 //   max-width: 1080px;
 // }
 .cast-name {
-  font-size: 0.8rem;
-  color: #000000;
+	font-size: 0.8rem;
+	color: #000000;
 }
 
 .cast-profile {
-  width: 160px;
-  img {
-    width: 100%;
-  }
+	width: 160px;
+	img {
+		width: 100%;
+	}
 }
 .castCrow {
-  width: 500px;
+	width: 500px;
 }
 
 // genre
 .genre-p {
-  position: sticky;
-  top: 0;
+	position: sticky;
+	top: 0;
 }
 .genre {
-  width: 16rem;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  margin-top: 4.2rem;
-  h3 {
-    font-size: 1rem;
-    color: #777777;
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-  }
-  a {
-    color: #000000;
-    font-size: 0.9rem;
-    border-radius: 1rem;
-    padding: 0.4rem 0.8rem;
-    margin-bottom: 0.5rem;
-    &:hover {
-      border: 1px solid #9e9e9e;
-    }
-  }
+	width: 16rem;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	margin-top: 4.2rem;
+	h3 {
+		font-size: 1rem;
+		color: #777777;
+		margin-bottom: 0.5rem;
+		margin-top: 1rem;
+	}
+	a {
+		color: #000000;
+		font-size: 0.9rem;
+		border-radius: 1rem;
+		padding: 0.4rem 0.8rem;
+		margin-bottom: 0.5rem;
+		&:hover {
+			border: 1px solid #9e9e9e;
+		}
+	}
 }
 .discover {
-  width: 100%;
+	width: 100%;
 }
 
 .active {
-  border: 1px solid #000;
+	border: 1px solid #000;
 }
 
 // pagination
 
 .pagination-btn {
-  border: 1px solid #ccc;
-  background: #ffffff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.3rem;
+	border: 1px solid #ccc;
+	background: #ffffff;
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.3rem;
 }

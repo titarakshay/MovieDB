@@ -60,7 +60,7 @@ body {
 		font-size: x-small;
 		width: 84%;
 		color: #3b3b3b;
-		padding: 0 1rem;
+		padding: 1rem 2rem;
 	}
 }
 
@@ -112,12 +112,14 @@ body {
 .content-block {
 	display: flex;
 	width: 100%;
+	font-size: 0.8rem;
 	.content-details {
-		border: 1px solid black;
-		padding: 0 0.8rem;
+		padding: 0 1.8rem;
 		.content-overview {
+			font-size: 1rem;
 			display: flex;
 			flex-wrap: wrap;
+			color: rgb(90, 90, 90);
 		}
 	}
 }
@@ -132,12 +134,13 @@ body {
 }
 
 .title-lg {
-	font-size: 1.8rem;
+	font-size: 2.2rem !important;
 	font-weight: 300;
 }
 .movie-tagline {
 	font-size: 1.2rem;
 	font-weight: 300;
+	line-height: 2rem;
 }
 
 // cast
@@ -150,6 +153,13 @@ body {
 	}
 	img {
 		width: 100%;
+	}
+}
+.text-secondary {
+	font-size: 1rem;
+	small {
+		padding-right: 0.4rem;
+		color: #858585;
 	}
 }
 //full cast list

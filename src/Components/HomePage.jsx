@@ -25,7 +25,7 @@ export default function HomePage() {
       }
     }
    fetching()
-   console.log(location,"gere");
+   document.title = `aMoviedb |`;
   }, [discover,page]);
   return (
     <>

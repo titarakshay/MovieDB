@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { API_KEY, BASEURL } from "../utils/app";
 
 export default function GenreList(handleClick) {
@@ -19,48 +19,54 @@ export default function GenreList(handleClick) {
   useEffect(() => {
     fetchData();
   }, []);
- 
+
   return (
     <>
       <div className="discover-list">
         <h3>Discover</h3>
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/popular">
+          <NavLink
+            activeClassName="active"
+            style={{ textDecoration: "none" }}
+            to="/popular"
+          >
             Popular
           </NavLink>
         </p>
-        {/* <p>
-          <NavLink style={{ textDecoration: "none" }} to="/now_playing">
-            Now Playing
-          </NavLink>
-        </p> */}
+
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/top_rated"
+          <NavLink
+            activeClassName="active"
+            style={{ textDecoration: "none" }}
+            to="/top_rated"
           >
             Top Rated
           </NavLink>
         </p>
         <p>
-          <NavLink style={{ textDecoration: "none" }} to="/upcoming">
+          <NavLink
+            activeClassName="active"
+            style={{ textDecoration: "none" }}
+            to="/upcoming"
+          >
             Upcoming
           </NavLink>
         </p>
 
         <h2>Genre</h2>
         {genreList.map((genre, i) => {
-            const {id}=genre
+          const { id } = genre;
           return (
             <p>
               <NavLink
                 key={i}
                 activeClassName="active"
                 to={{
-                    pathname:`/${id}`,
-                    state:[id]
-                  }}
+                  pathname: `/${id}`,
+                  state: [id],
+                }}
                 style={{ textDecoration: "none" }}
                 // onClick={(e) => handleClick(genre.id,"genre")}
-               
               >
                 {genre.name}
               </NavLink>

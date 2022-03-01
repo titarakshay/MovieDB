@@ -1,23 +1,20 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Navigate, Route, Routes, useLocation } from "react-router"
+import { Navigate, Route, Routes } from "react-router"
 
 
 import HomePage from './Components/HomePage';
 import Header from './Components/Header';
 import ContentDetails from './Components/Contents/ContentDetails';
 import GenreList from './Components/GenreList';
-import { useState } from 'react';
 import Cast from './Components/Cast';
 import PersonDetails from './Components/PersonDetails';
 
 
 function App() {
-  const [genresId, setGenresId] = useState(0);
+  
   const handleClick = (id) => {
-    console.log(id,"iddd");
    
   };
-console.log(genresId,"id ");
 
   return (
     < BrowserRouter >

@@ -24,6 +24,13 @@ export default function HomePage() {
         );
         const fetchData = fetch.data;
         setMovieList(fetchData);
+        const fetch2= await axios.get(
+          `${BASEURL}/tv/${
+            discover ? discover : "popular"
+          }?api_key=${API_KEY}&language=en-US&page=${page}`
+        );
+        const fetchData2 = fetch2.data;
+        console.log(fetchData2,"here");
       } catch (error) {
         console.log(error);
       }
@@ -35,50 +42,7 @@ export default function HomePage() {
   console.log(carouselList,"list");
   return (
     <>
-      {carouselList ? 
-      <Carousel>
-        <Carousel.Item>
-        console.log("inside")
-          <img
-            className="d-block w-100"
-            src={`https://image.tmdb.org/t/p/w500${carouselList[0].poster_path}`}
-            alt="First slide"
-            />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Second slide&bg=282c34"
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=20232a"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-      :
-      <Loading/>
-      }
+      
       <List movieList={movieList.results} />
       <Pagination nextPreviousPage={movieList} setPage={setPage} page={page} />
       {/* <div className="main-container">

@@ -1,6 +1,8 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import { useLocation } from "react-router";
+
 import { API_KEY, BASEURL } from "../../utils/app";
 import Loading from "../Loading";
 import Trailer from "../Trailers/Trailer";
@@ -11,7 +13,11 @@ import Trailer from "../Trailers/Trailer";
 export default function SingleContentDetails({ contentDetail, credits }) {
 	const [trailer, setTrailer] = useState("");
 	const { name } = useParams();
-	console.log(credits, "recommend");
+	const location= useLocation()
+
+	console.log( "single page hit");
+	console.log(location,"location");
+
 
 	useEffect(() => {
 		document.title = `Movie | ${contentDetail?.title}`;

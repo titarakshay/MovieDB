@@ -62,7 +62,7 @@ export default function GenreList(handleClick) {
                 key={i}
                 activeClassName="active"
                 to={{
-                  pathname: `/${id}`,
+                  pathname: `/genre/${id}`,
                   state: [id],
                 }}
                 style={{ textDecoration: "none" }}

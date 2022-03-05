@@ -13,6 +13,7 @@ export default function HomePage() {
   const [movieList, setMovieList] = useState([]);
   const { discover } = useParams();
   const [page, setPage] = useState(1);
+  const location= useLocation()
 
   useEffect(() => {
     async function fetching() {
@@ -38,8 +39,6 @@ export default function HomePage() {
     fetching();
     document.title = `aMoviedb |   ${discover.toUpperCase()}`;
   }, [discover, page]);
- let carouselList =movieList
-  console.log(carouselList,"list");
   return (
     <>
       
